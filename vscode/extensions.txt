@@ -1,0 +1,46 @@
+# python
+ms-python.python
+njpwerner.autodocstring
+charliermarsh.ruff
+
+# rust
+rust-lang.rust-analyzer
+tamasfe.even-better-toml
+# one of theses for debug
+vadimcn.vscode-lldb
+ms-vscode.cpptools
+
+# java
+vscjava.vscode-java-debug
+redhat.java
+vscjava.vscode-maven
+vscjava.vscode-java-dependency
+vscjava.vscode-java-test
+redhat.vscode-xml # uh
+
+# go
+golang.go
+
+# php
+bmewburn.vscode-intelephense-client
+
+# descriptive langages
+yzhang.markdown-all-in-one
+mechatroner.rainbow-csv
+redhat.vscode-yaml
+
+# editor
+wmaurer.change-case
+
+# git
+eamodio.gitlens
+GitLab.gitlab-workflow
+
+# div
+gurumukhi.selected-lines-count
+akamud.vscode-theme-onelight
+alefragnani.Bookmarks
+usernamehw.errorlens
+oderwat.indent-rainbow
+johnpapa.vscode-peacock
+Gruntfuggly.todo-tree
