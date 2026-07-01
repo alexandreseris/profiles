@@ -11,8 +11,8 @@
     "editor.inlayHints.fontFamily": "'Monaspace Neon Var'",
     "terminal.integrated.fontFamily": "'Monaspace Neon Var'",
     "------------ UI ------------": "#####################################################################################",
-    "workbench.colorTheme": "Quiet Light",
-    "window.title": "${dirty}${activeEditorShort}${separator}${activeEditorMedium}${separator}${rootName}${separator}",
+    "workbench.colorTheme": "Solarized Light",
+    "window.title": "${dirty} ${rootNameShort} -▸ ${activeEditorMedium}",
     "window.commandCenter": false,
     "window.customMenuBarAltFocus": false,
     "window.enableMenuBarMnemonics": false,
@@ -60,13 +60,13 @@
         "editorInlayHint.typeBackground": "#f0ceff59",
         "editorInlayHint.typeForeground": "#2020209a",
         "editorStickyScroll.background": "#d7f2f5",
-        "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
-        "editorBracketHighlight.foreground1": "#4400ff",
-        "editorBracketHighlight.foreground2": "#ff00ff",
-        "editorBracketHighlight.foreground3": "#ddd900",
-        "editorBracketHighlight.foreground4": "#00d0df",
-        "editorBracketHighlight.foreground5": "#ffa600",
-        "editorBracketHighlight.foreground6": "#40e000"
+        "editorBracketHighlight.unexpectedBracket.foreground": "#9c0000",
+        "editorBracketHighlight.foreground1": "#2e00ad",
+        "editorBracketHighlight.foreground2": "#a300a3",
+        "editorBracketHighlight.foreground3": "#9e9b00",
+        "editorBracketHighlight.foreground4": "#009da8",
+        "editorBracketHighlight.foreground5": "#966100",
+        "editorBracketHighlight.foreground6": "#2d9e00"
     },
     "------------ EDITEUR ------------": "#####################################################################################",
     "editor.tabSize": 4,
@@ -87,6 +87,13 @@
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
     "files.eol": "\n",
     "files.encoding": "utf8",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.largeFileOptimizations": false,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "off",
+        "strings": "off"
+    },
     "------------ SEARCH STUFF ------------": "#####################################################################################",
     "files.exclude": {
         "venv": true,
@@ -99,7 +106,8 @@
         ".pytest_cache": true,
         "**/__pycache__": true,
         "**/*.egg-info": true,
-        ".ruff_cache": true
+        ".ruff_cache": true,
+        "**/.pytest_cache": true,
     },
     "search.exclude": {
         "venv": true,
@@ -109,8 +117,10 @@
         ".pytest_cache": true,
         "**/__pycache__": true,
         "**/*.egg-info": true,
-        ".ruff_cache": true
+        ".ruff_cache": true,
+        "**/.pytest_cache": true,
     },
+    "search.defaultViewMode": "tree",
     "search.showLineNumbers": true,
     "------------ TERMINAL ------------": "#####################################################################################",
     "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -123,15 +133,20 @@
     "terminal.integrated.env.windows": {
         "VSCODE_WS": "${workspaceFolder}"
     },
+    "terminal.integrated.defaultProfile.linux": "zsh",
     "------------ DEBUG ------------": "#####################################################################################",
     "debug.openDebug": "openOnDebugBreak",
     "debug.inlineValues": "off",
     "debug.allowBreakpointsEverywhere": true,
     "debug.console.closeOnEnd": true,
-    "------------ DIV ------------": "#####################################################################################",
-    "security.workspace.trust.untrustedFiles": "open",
-    "telemetry.telemetryLevel": "off",
+    "------------ RUST ------------": "#####################################################################################",
+    "[rust]": {
+        "editor.formatOnSave": true,
+    },
     "------------ PYTHON ------------": "#####################################################################################",
+    "python.analysis.reportExtraTelemetry": false,
+    "python.analysis.languageServerMode": "full",
+    "python.analysis.enableEditableInstalls": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
@@ -143,8 +158,10 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         },
-        "editor.formatOnType": false
+        "editor.formatOnType": false,
+        "diffEditor.ignoreTrimWhitespace": false,
     },
+    "ruff.nativeServer": "off",
     "ruff.lint.args": [
         "--exclude",
         "venv/*",
@@ -155,7 +172,10 @@
     "ruff.organizeImports": true,
     "ruff.lint.run": "onSave",
     "python.analysis.typeCheckingMode": "basic",
-    "mypy.dmypyExecutable": "chemin/vers/dmypy.exe",
+    "mypy.dmypyExecutable": "/home/aseris/venv/bin/dmypy",
+    "mypy.runUsingActiveInterpreter": true,
+    "debugpy.debugJustMyCode": false,
+    "python.analysis.diagnosticMode": "openFilesOnly",
     "------------ GO ------------": "#####################################################################################",
     "go.inlayHints.parameterNames": true,
     "go.inlayHints.rangeVariableTypes": true,
@@ -165,17 +185,48 @@
     "go.inlayHints.constantValues": true,
     "go.inlayHints.functionTypeParameters": true,
     "------------ JS ------------": "#####################################################################################",
+    "js/ts.updateImportsOnFileMove.enabled": "always",
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
     },
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
     },
-    "typescript.inlayHints.parameterNames.enabled": "all",
-    "typescript.inlayHints.variableTypes.enabled": true,
-    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "typescript.inlayHints.parameterTypes.enabled": true,
-    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "[vue]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+    },
+    "[jsx-tags]": {
+        "editor.defaultFormatter": "oxc.oxc-vscode",
+        "editor.formatOnSave": true,
+    },
+    "js/ts.preferences.importModuleSpecifier": "non-relative",
+    "playwright.showTrace": true,
+    "js/ts.inlayHints.parameterNames.enabled": "all",
+    "js/ts.inlayHints.variableTypes.enabled": true,
+    "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+    "js/ts.inlayHints.parameterTypes.enabled": true,
+    "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+    "js/ts.inlayHints.enumMemberValues.enabled": true,
+    "js/ts.locale": "en",
+    "vue.inlayHints.missingProps": true,
+    "vue.hover.rich": true,
+    "------------ HTML/CSS ------------": "#####################################################################################",
+    "[html]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "html.autoClosingTags": false,
     "------------ PHP ------------": "#####################################################################################",
     "php-cs-fixer.rules": "@PhpCsFixer",
     "php-cs-fixer.executablePathWindows": "php-cs-fixer.bat",
@@ -211,12 +262,12 @@
         "gitlens.codeLens.scopes": [
             "document"
         ],
-        "editor.detectIndentation": false
+        "editor.detectIndentation": false,
+        "editor.indentSize": 2,
+        "editor.defaultFormatter": "oxc.oxc-vscode"
     },
-    "------------ HTML ------------": "#####################################################################################",
-    "[html]": {
-        "editor.formatOnSave": false,
-        "editor.defaultFormatter": "vscode.html-language-features"
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "------------ GIT ------------": "#####################################################################################",
     "diffEditor.diffAlgorithm": "advanced",
@@ -227,11 +278,13 @@
     "git.mergeEditor": false,
     "git.confirmSync": false,
     "git.openRepositoryInParentFolders": "never",
+    "git.allowNoVerifyCommit": true,
+    "git.confirmNoVerifyCommit": false,
+    "git.suggestSmartCommit": false,
     "-------------- GITLENS ------------": "#####################################################################################",
     "gitlens.advanced.messages": {
         "suppressCreatePullRequestPrompt": true
     },
-    "gitlens.views.branches.branches.layout": "list",
     "gitlens.graph.dateStyle": "absolute",
     "gitlens.graph.dateFormat": "YYYY-MM-DD HH:mm:ss",
     "gitlens.codeLens.enabled": false,
@@ -251,9 +304,68 @@
         "line",
         "overview"
     ],
-    "------------ EXTENSIONS DIV ------------": "#####################################################################################",
+    "gitlens.views.scm.grouped.views": {
+        "commits": false,
+        "branches": false,
+        "remotes": false,
+        "stashes": false,
+        "tags": false,
+        "worktrees": false,
+        "contributors": false,
+        "repositories": false,
+        "searchAndCompare": true,
+        "launchpad": false
+    },
+    "gitlens.advanced.fileHistoryShowMergeCommits": true,
+    "gitlens.views.branches.branches.layout": "list",
+    "gitlens.rebaseEditor.ordering": "asc",
+    "gitlens.views.stashes.files.layout": "tree",
+    "------------ GITLAB/HUB ------------": "#####################################################################################",
+    "gitlab.duoChat.enabled": false,
+    "gitlab.duo.enabledWithoutGitlabProject": false,
+    "gitlab.duoCodeSuggestions.enabled": false,
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "gitlab.customQueries": [
+        {
+            "name": "Issues assigned to me",
+            "type": "issues",
+            "scope": "assigned_to_me",
+            "state": "opened",
+            "noItemText": "No issues assigned to you."
+        },
+        {
+            "name": "Issues created by me",
+            "type": "issues",
+            "scope": "created_by_me",
+            "state": "opened",
+            "noItemText": "No issues created by you."
+        },
+        {
+            "name": "MR review",
+            "type": "merge_requests",
+            "reviewer": "<current_user>",
+            "state": "opened",
+            "noItemText": "No merge requests for you to review."
+        },
+        {
+            "name": "MR created by me",
+            "type": "merge_requests",
+            "scope": "created_by_me",
+            "state": "opened",
+            "noItemText": "No merge requests created by you."
+        },
+        {
+            "name": "MR all",
+            "type": "merge_requests",
+            "scope": "all",
+            "state": "opened",
+            "noItemText": "The project has no merge requests"
+        }
+    ],
+    "------------ ESTETICS DIV ------------": "#####################################################################################",
     "peacock.color": "#dedede",
-    "todo-tree.tree.expanded": true,
     "errorLens.enabled": true,
     "errorLens.messageTemplate": "($count) $source::$message",
     "errorLens.messageBackgroundMode": "message",
@@ -271,6 +383,95 @@
         "rgba(215, 143, 255, 0.2)",
         "rgba(255, 143, 218, 0.2)"
     ],
-    "indentRainbow.errorColor": "rgba(255, 46, 0, 0.6)",
-    "indentRainbow.tabmixColor": "rgba(255, 138, 0, 0.6)"
+    "indentRainbow.errorColor": "rgba(255, 46, 0, 0)", // nice if not too much err
+    "indentRainbow.tabmixColor": "rgba(255, 138, 0, 0)", // same as above
+    "indentRainbow.excludedLanguages": [
+        "plaintext",
+        "json"
+    ],
+    "------------ TELEMTRY ------------": "#####################################################################################",
+    "telemetry.telemetryLevel": "off",
+    "redhat.telemetry.enabled": false,
+    "gitlens.telemetry.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "partialDiff.enableTelemetry": false,
+    "python.analysis.enablePerfTelemetry": false,
+    "editor.experimental.treeSitterTelemetry": false,
+    "------------ DIV ------------": "#####################################################################################",
+    "security.workspace.trust.untrustedFiles": "open",
+    "shellcheck.exclude": [
+        "SC1091"
+    ],
+    "cSpell.userWords": [],
+    "cSpell.enabledNotifications": {
+        "Maximum Word Length Exceeded": false
+    },
+    "symlink-follow.autoFollow": true,
+    "explorer.confirmPasteNative": false,
+
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "terminal.integrated.initialHint": false,
+    "------------ STOOPID ------------": "#####################################################################################",
+    "powermode.enabled": true,
+    "powermode.explosions.enabled": true,
+    "powermode.shake.enabled": false,
+    "powermode.combo.counterEnabled": "hide",
+    "powermode.combo.timerEnabled": "hide",
+    "powermode.combo.threshold": 3,
+    "powermode.combo.timeout": 4,
+    "powermode.combo.location": "editor",
+    "powermode.presets": "flames",
+
+    "faah.enabled": true,
+    "faah.monitorTerminal": true,
+    "faah.monitorDiagnostics": true,
+    "faah.diagnosticsSeverity": "error",
+    "faah.cooldownMs": 1500,
+    "faah.terminalCooldownMs": 1500,
+    "faah.diagnosticsCooldownMs": 1500,
+    "faah.patternMode": "override",
+    "faah.volumePercent": 70,
+    "faah.showVisualNotifications": true,
+    "faah.customSoundPath": "",
+    "faah.quietHoursEnabled": false,
+    "faah.quietHoursStart": "22:00",
+    "faah.quietHoursEnd": "07:00",
+    "faah.patterns": [
+        "\\berror\\b",
+        "\\bfailed\\b",
+        "\\bfailure\\b",
+        "\\bfatal\\b",
+        "\\bexception\\b",
+        "\\bcritical\\b",
+        "\\berr(or)?[:!\\]]",
+        "\\buncaught\\b",
+        "UnhandledPromiseRejection",
+        "Traceback \\(most recent call last\\):",
+        "\\bsyntaxerror\\b",
+        "\\btypeerror\\b",
+        "\\breferenceerror\\b",
+        "\\brangeerror\\b",
+        "\\bmodule\\s+not\\s+found\\b",
+        "\\bcannot\\s+find\\s+module\\b",
+        "\\bno\\s+module\\s+named\\b",
+        "\\bsegmentation\\s+fault\\b",
+        "\\bcore\\s+dumped\\b",
+        "\\bpanic:|\\bpanicked\\s+at\\b",
+        "^\\s*caused\\s+by:",
+        "\\bpermission\\s+denied\\b",
+        "\\baccess\\s+denied\\b",
+        "\\bcommand\\s+not\\s+found\\b",
+        "\\btimeout(?:\\s+exceeded)?\\b",
+        "\\bconnection\\s+(?:refused|reset|timed\\s*out)\\b",
+        "\\bhttp\\s+5\\d\\d\\b"
+    ],
+    "faah.excludePatterns": [
+        "^\\[[^\\]]+\\s[0-9a-f]{7,40}\\]\\s(?:feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\([^)]+\\))?!?:\\s.+$",
+        "^(?:feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\([^)]+\\))?!?:\\s.+$"
+    ]
 }

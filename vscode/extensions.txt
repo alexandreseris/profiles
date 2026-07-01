@@ -1,46 +1,104 @@
-# python
+########################################
+######## EDITOR ########################
+wmaurer.change-case
+qcz.text-power-tools
+ryu1kn.edit-with-shell
+ryu1kn.partial-diff
+gurumukhi.selected-lines-count
+usernamehw.errorlens
+oderwat.indent-rainbow
+streetsidesoftware.code-spell-checker
+iliazeus.vscode-ansi
+jkillian.custom-local-formatters
+
+########################################
+######## ORGANIZATION ##################
+alefragnani.Bookmarks
+Gruntfuggly.todo-tree
+
+########################################
+######## AESTHETICS ####################
+akamud.vscode-theme-onelight
+johnpapa.vscode-peacock
+
+########################################
+######## PYTHON ########################
+ms-python.debugpy
 ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
 njpwerner.autodocstring
 charliermarsh.ruff
+danielsanchez.docstring-fold-and-unfold
+kawamataryo.copy-python-dotted-path
 
-# rust
+########################################
+######## RUST ##########################
 rust-lang.rust-analyzer
 tamasfe.even-better-toml
-# one of theses for debug
+one of theses for debug
 vadimcn.vscode-lldb
 ms-vscode.cpptools
 
-# java
+########################################
+######## JAVA ##########################
 vscjava.vscode-java-debug
 redhat.java
 vscjava.vscode-maven
 vscjava.vscode-java-dependency
 vscjava.vscode-java-test
-redhat.vscode-xml # uh
+redhat.vscode-xml
 
-# go
+########################################
+######## GO ############################
 golang.go
 
-# php
+########################################
+######## PHP ###########################
 bmewburn.vscode-intelephense-client
 
-# descriptive langages
+########################################
+######## SQL ###########################
+ms-ossdata.vscode-pgsql
+
+########################################
+######## BASH ##########################
+timonwong.shellcheck
+
+########################################
+######## JS/TS #########################
+mxsdev.typescript-explorer
+oxc.oxc-vscode
+yoavbls.pretty-ts-errors
+
+########################################
+######## VUE ###########################
+vitest.explorer
+vue.volar
+
+########################################
+######## TAILWIND ######################
+austenc.tailwind-docs
+bradlc.vscode-tailwindcss
+
+########################################
+######## DESCRIPTIVE LANGAGES ##########
 yzhang.markdown-all-in-one
 mechatroner.rainbow-csv
 redhat.vscode-yaml
 
-# editor
-wmaurer.change-case
+########################################
+######## SYS ###########################
+hangxingliu.vscode-systemd-support
+zaucy.symlink-follow
 
-# git
+########################################
+######## GIT ###########################
 eamodio.gitlens
 GitLab.gitlab-workflow
 
-# div
-gurumukhi.selected-lines-count
-akamud.vscode-theme-onelight
-alefragnani.Bookmarks
-usernamehw.errorlens
-oderwat.indent-rainbow
-johnpapa.vscode-peacock
-Gruntfuggly.todo-tree
+########################################
+######## STOOPID #######################
+hoovercj.vscode-power-mode
+pixl-garden.bongocat
+thk.faah
